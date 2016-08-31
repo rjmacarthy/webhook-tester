@@ -7,7 +7,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Webhook tester' });
 });
 
 router.post('/api/webhook', function (req, res, next) {
@@ -21,7 +21,7 @@ router.post('/api/webhook', function (req, res, next) {
 });
 
 
-router.post('/list', function (req, res, next) {
+router.get('/list', function (req, res, next) {
   glob(path.join(__dirname, '../public/**/*.json'), null, function (er, files) {
     res.status(200).json(files);
   })
